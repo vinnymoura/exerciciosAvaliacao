@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jquery.maskMoney.js" type="text/javascript"></script>
+    <title>Exercícios</title>
+</head>
+
+<style>
+    .respostas {
+        margin: 5px 15px;
+    }
+
+    .titulos {
+        margin: 10px 0 6px 0;
+    }
+</style>
+
+<body>
+
+    <h3>QUESTIONÁRIOS</h3>
+    <h4 class="titulos">1- O que você entendeu por algoritmos ?</h4>
+    <p class="respostas">Algoritmo é uma sequência de instruções para resolver problema e/ou executar uma ação.</p>
+
+    <h4 class="titulos">2- Explique com suas palavras o que é uma linguagem de programação ?</h4>
+    <p class="respostas">Conjunto de instruções e/ou regras que o ser humano encontrou de ordenar um computador a
+        executar ações, que
+        compiladas se tornam um programa.
+    </p>
+
+    <h4 class="titulos">3- Qual a diferença de linguagens compiladas/interpretadas ?</h4>
+    <p class="respostas">A linguagem interpretada é “traduzida” por um terceiro e a linguagem compilada traduz o
+        programa diretamente.</p>
+
+    <h4 class="titulos">4- Quais os tipos de dados que existem ?</h4>
+    <p class="respostas">Numéricos, caracteres e lógicos</p>
+
+    <h4 class="titulos">5- O que é atribuição ?</h4>
+    <p class="respostas">Atribuição é dar um valor a uma variável ou constante.</p>
+
+    <h4 class="titulos">6- Qual a diferença entre constante e variável ?</h4>
+    <p class="respostas">Constante não pode ser alterado no decorrer da execução do programa enquanto, variáveis podem
+        ser alteradas
+        quantas vezes forem necessárias
+    </p>
+
+    <h4 class="titulos">7- Informe o tipo de dados para os valores abaixo:</h4>
+    <p class="respostas">A) “Teste”: <strong>STRING</strong></p>
+    <p class="respostas">B) 12: <strong>INT</strong></p>
+    <p class="respostas">C) “-15”: <strong>STRING</strong></p>
+    <p class="respostas">D) “Seu nome é:" <strong>STRING</strong></p>
+
+
+    <h3>PRÁTICA:</h3>
+    <select id="selecaoExercicio" onchange="selectExercicio(this.value)">
+        <option value="1">Exercício 01</option>
+        <option value="2">Exercício 02</option>
+        <option value="3">Exercício 03</option>
+        <option value="4">Exercício 04</option>
+        <option value="5">Exercício 05</option>
+        <option value="6">Exercício 06</option>
+        <option value="7">Exercício 07</option>
+        <option value="8">Exercício 08</option>
+        <option value="9">Exercício 09</option>
+    </select>
+
+    <div class="exercicio" id="exercicio-1">
+        <h2>Exercício 01</h2>
+        <p>Insira as notas a seguir!</p>
+        <input class="nota1" placeholder="Valor1">
+        <input class="nota2" placeholder="Valor2">
+        <button onclick="clacularMedia()">Calcular média</button>
+        <p class="mensagem" style="display:none">Será exibido a média das notas a seguir:</p>
+        <span id="resultado"></span>
+
+    </div>
+
+    <div class="exercicio" id="exercicio-2" style="display:none;">
+        <h2>Exercício 02</h2>
+        <p>Calculo dos juros de atraso</p>
+        <input class="primeiroValor" id="currency" placeholder="Valor da prestação">
+        <input class="segundoValor" placeholder="Taxa cobrada pelo banco">
+        <input class="tempoAtraso" placeholder="Tempo de atraso">
+        <button onclick="calculaPrestacaoEmAtraso()">Resultado</button>
+        <span class="resultadoExercicio2"></span>
+    </div>
+
+    <div class="exercicio" id="exercicio-3" style="display:none;">
+        <h2>Exercício 03</h2>
+        <p>Os campos terão seus valores trocados</p>
+        <input placeholder="Digite o que quiser" class="valor1">
+        <input placeholder="O que digitar aqui será trocado" class="valor2">
+        <button onclick="trocarValores()">Trocar valores dos campos</button>
+
+    </div>
+
+    <div class="exercicio" id="exercicio-4" style="display:none;">
+        <h2>Exercício 04</h2>
+        <p>Para calcular o valor do volume de uma caixa, precisamos saber seu comprimento, sua largura e sua altura</p>
+        <input class="comprimento" placeholder="Comprimento">
+        <input class="largura" placeholder="Largura">
+        <input class="altura" placeholder="Altura">
+        <button onclick="calcularVolumeCaixa()">Calcular Volume</button>
+        <span class="resultadoExercicio4"></span>
+    </div>
+
+    <div class="exercicio" id="exercicio-5" style="display:none;">
+        <h2>Reajuste de salário</h2>
+        <p>Informe o Id do funcionário</p>
+        <input class="numeroIdentificacao" placeholder="ID">
+        <p>Salário Atual do funcionado!</p>
+        <input class="salarioAtual" placeholder="Salário atual">
+        <p>Reajuste Salarial em %</p>
+        <input class="porcentagemDeAumento" placeholder="Porcentagem de aumento">
+        <button onclick="calcularSalario()">Calcular salário</button>
+        <span class="resultadoExercicio5"></span>
+    </div>
+
+    <div class="exercicio" id="exercicio-6" style="display:none;">
+        <h2>Exercício 6- Operações aritimética básica</h2>
+        <p>Digite os valores que deseja fazer as operações aritiméticas!</p>
+        <input placeholder="Valor A" class="valorA">
+        <input placeholder="Valor B" class="valorB">
+        <button onclick="operacoesAritimeticas()">Converter</button>
+        <p class="resultadoExercicio6"></p>
+
+    </div>
+
+    <div class="exercicio" id="exercicio-7" style="display:none;">
+        <h2>Exercício 7- Renda total de um Jogo</h2>
+        <p>Publico total</p>
+        <input placeholder="Quantidade de pessoas no estadio" class="plateia">
+
+        <p>Porcentagem de ingressos POPULAR</p>
+        <input placeholder="Porcentagem Popular" class="porcentagemPopular">
+        <p>Informe o valor do ingresso POPULAR</p>
+        <input placeholder="Valor do ingresso" class="ingressoPopular">
+
+        <p>Porcentagem de ingressos GERAL</p>
+        <input placeholder="Porcentagem Geral" class="porcentagemGeral">
+        <p>Valor do ingressos GERAL</p>
+        <input placeholder="Valor do ingresso" class="ingressoGeral">
+
+        <p>Porcentagem de ingressos CADEIRA</p>
+        <input placeholder="Porcentagem Cadeira" class="porcentagemCadeira">
+        <p>Valor do ingressos Cadeira</p>
+        <input placeholder="Valor do ingresso" class="ingressoCadeira">
+
+        <button onclick="RendaDoJogo()">Renda total do jogo</button>
+        <span class="resultadoExercicio7"></span>
+    </div>
+
+    <div class="exercicio" id="exercicio-8" style="display:none;">
+        <h2>Exercício 8 Calcular formula Bháskara</h2>
+        <p>Digite o valor A</p>
+        <input placeholder="valor 1" class="valorBascaraA">
+
+        <p>Digite o valor B</p>
+        <input placeholder="valor 2" class="valorBascaraB">
+
+        <p>Digite o valor C</p>
+        <input placeholder="valor 3" class="valorBascaraC">
+
+        <button onclick="CalcularFormulaBhaskara()">Formua de Bháskara</button>
+        <span class="resultadoExercicio8"></span>
+    </div>
+
+    <div class="exercicio" id="exercicio-9" style="display:none;">
+        <h2>Exercício 09 - Calculo energia gasta no mês.</h2>
+
+        <p>Horas do eletrodoméstico ligado por dia</p>
+        <input id='horaLigado' placeholder='HH'></input>
+
+        <p>Dias do eletrodoméstico ligado</p>
+        <input id="diasLigado" placeholder="Tempo Ligado">
+
+        <p>Consumo do eletrodoméstico</p>
+        <input id='consumo' placeholder='W/h'></input>
+
+        <p>O custo hora em Watts da companhia elétrica em sua região</p>
+        <input id="custoHoraWatts" placeholder="R$ 0,00">
+
+        <button onclick="calcularGastoMensalEnergia()">Calcular</button>
+        <span id="valorASerPago"></span>
+    </div>
+
+</body>
+<script>
+    function selectExercicio(value) {
+        var selecionaExercicio = $(`#exercicio-${value}`);
+        $('div.exercicio:not([id="-' + value + '"])').hide();
+        $(selecionaExercicio).show();
+    }
+
+    //   Aqui script exercicio1
+    function clacularMedia() {
+        var nota1 = $(`.nota1`).val();
+        var nota2 = $(`.nota2`).val();
+        var divisorMedia = 2;
+        var resultado = (parseInt(nota1) + parseInt(nota2)) / divisorMedia;
+        var mensagem = $(`.mensagem`).removeAttr('style');
+        $(`#resultado`).text(`A média das notas informadas é: ${resultado}`);
+    }
+
+    //Aqui script exercicio2  
+    function calculaPrestacaoEmAtraso() {
+
+        var valorParcela = parseInt($(".primeiroValor").val());
+        var taxaBanco = parseFloat($(".segundoValor").val());
+        var tempoAtraso = parseInt($(".tempoAtraso").val());
+
+        var prestacao = valorParcela + ((valorParcela * (taxaBanco / 100)) * tempoAtraso);
+        var textoTempoAtraso = "dia"
+        if (tempoAtraso > 1) {
+            textoTempoAtraso = "dias"
+        }
+        $(".resultadoExercicio2").text(`O valor total a ser pago por ${tempoAtraso} ${textoTempoAtraso} de atraso é de R$ ${prestacao.toFixed(2)}`);
+
+    }
+
+    function trocarValores() {
+        var tempValor1 = $(".valor1").val();
+        var tempValor2 = $(".valor2").val();
+
+        $(".valor1").val(tempValor2);
+        $(".valor2").val(tempValor1);
+    }
+
+    function calcularVolumeCaixa() {
+        var comprimento = parseFloat($(".comprimento").val());
+        var largura = parseFloat($(".largura").val());
+        var altura = parseFloat($(".altura").val());
+
+        if ((comprimento <= 0 || $(".comprimento").val() == "") || (largura <= 0 || $(".largura").val() == "") || (altura <= 0 || $(".altura").val() == "")) {
+            $(".resultadoExercicio4").text(`Os valores não podem ser 0, nulos ou negativos.`)
+        } else {
+            var volume = comprimento * largura * altura;
+            $(".resultadoExercicio4").text(`Com o comprimento ${comprimento}cm a largura ${largura}cm e altura de ${altura}cm. Calcula-se o volume da caixa de ${volume}.`);
+        }
+
+    }
+
+    function calcularSalario() {
+        var ID = $(".numeroIdentificacao").val();
+        var salarioAtual = parseFloat($(".salarioAtual").val());
+        var porcentagemAumento = parseFloat($(".porcentagemDeAumento").val());
+        var salarioReajuste = $(salarioAtual * (porcentagemAumento / 100) + salarioAtual);
+
+        $(".resultadoExercicio5").text(`O funcionário de Id ${ID} 
+                tem um salário de R$ ${salarioAtual.toFixed(2)} com o reajuste de ${porcentagemAumento}% passa a receber R$ ${salarioReajuste[0].toFixed(2)}.`
+        )
+    }
+
+    function operacoesAritimeticas() {
+        var valorA = parseFloat($(".valorA").val());
+        var valorB = parseFloat($(".valorB").val());
+        var adicao = (valorA + valorB);
+        var subtracao = (valorA - valorB);
+        var multiplicacao = (valorA * valorB);
+        var divisao = (valorA / valorB);
+
+        $(".resultadoExercicio6").append(`<p>O valor da soma entre ${valorA} + ${valorB} = ${adicao}.</p>`);
+        $(".resultadoExercicio6").append(`<p>O valor da subtração entre ${valorA} - ${valorB} = ${subtracao}.`);
+        $(".resultadoExercicio6").append(`<p>O valor da multiplicação entre ${valorA} x ${valorB} = ${multiplicacao}.`);
+        $(".resultadoExercicio6").append(`<p>O valor da divisão entre ${valorA} / ${valorB} = ${divisao}.</p>`);
+
+    }
+
+    function RendaDoJogo() {
+        var publicoTotal = parseFloat($(".plateia").val());
+        var porcentagemPopular = parseFloat($(".porcentagemPopular").val());
+        var ingressoPopular = parseFloat($(".ingressoPopular").val());
+
+        var porcentagemGeral = parseFloat($(".porcentagemGeral").val());
+        var ingressoGeral = parseFloat($(".ingressoGeral").val());
+
+        var porcentagemCadeira = parseFloat($(".porcentagemCadeira").val());
+        var ingressoCadeira = parseFloat($(".ingressoCadeira").val());
+
+        var quantidadePopular = (publicoTotal * (porcentagemPopular / 100));
+        var valorDasPopular = (quantidadePopular * ingressoPopular);
+
+        var quantidadeGeral = (publicoTotal * (porcentagemGeral / 100));
+        var valorDasGerais = (quantidadeGeral * ingressoGeral);
+
+        var quantidadeCadeira = (publicoTotal * (porcentagemCadeira / 100));
+        var valorDasCadeiras = (quantidadeCadeira * ingressoCadeira);
+
+        var valorTotal = (valorDasPopular + valorDasGerais + valorDasCadeiras);
+
+        $(".resultadoExercicio7").append(`<p>O valor arrecadado para ${quantidadePopular} pessoas pagando o preço popular de R$ ${ingressoPopular.toFixed(2)} é R$ ${valorDasPopular.toFixed(2)}.</p>`);
+        $(".resultadoExercicio7").append(`<p>O valor arrecadado para ${quantidadeGeral} pessoas pagando o preço popular de R$ ${ingressoGeral.toFixed(2)} é R$ ${valorDasGerais.toFixed(2)}.</p>`);
+        $(".resultadoExercicio7").append(`<p>O valor arrecadado para ${quantidadeCadeira} pessoas pagando o preço popular de R$ ${ingressoCadeira.toFixed(2)} é R$ ${valorDasCadeiras.toFixed(2)}.</p>`);
+
+        $(".resultadoExercicio7").append(`<p>O valor total arrecadado é R$ ${valorTotal.toFixed(2)}.</p>`);
+    }
+
+    function CalcularFormulaBhaskara() {
+        debugger;
+        var valorA = parseFloat($(".valorBascaraA").val());
+        var valorB = parseFloat($(".valorBascaraB").val());
+        var valorC = parseFloat($(".valorBascaraC").val());
+
+        var delta = 0;
+        var x1 = 0;
+        var x2 = 0;
+        delta = ((valorB * valorB) - (4 * valorA * valorC));
+        x1 = (- valorB + Math.sqrt(delta)) / (2 * valorA);
+        x2 = (- valorB - Math.sqrt(delta)) / (2 * valorA);
+
+        if (delta < 0) {
+            $(".resultadoExercicio8").append(`A equação não possuí raizes reais.`);
+        } else {
+            $(".resultadoExercicio8").append(`O valor de x1:${x1}.`);
+            $(".resultadoExercicio8").append(`O valor de x2:${x2}.`);
+
+        }
+    }
+
+    function calcularGastoMensalEnergia() {
+        var horasLigado;
+        var diasLigado;
+        var consumo;
+        var custoHoraWatts;
+        var horasNoMesLigado;
+        var conversaoConsumo;
+        var valorAPagar;
+        var dias = "dia";
+        if ($("#horaLigado").val() == null || $("#horaLigado").val() == "") {
+            $("#valorASerPago").empty();
+            $("#valorASerPago").append(`<p>O valor das horas é necessário para fazer o calculo!</p>`)
+        } else {
+            horasLigado = parseInt($("#horaLigado").val());
+        }
+        if ($("#diasLigado").val() == null || $("#diasLigado").val() == "") {
+            $("#valorASerPago").empty();
+            $("#valorASerPago").append(`<p>Dias do eletrodoméstico é necessário para fazer o calculo!</p>`)
+        } else {
+            diasLigado = parseInt($("#diasLigado").val());
+        }
+        if ($("#consumo").val() == null || $("#consumo").val() == "") {
+            $("#valorASerPago").empty();
+            $("#valorASerPago").append(`<p>Consumo do eletrodoméstico é necessário para fazer o calculo!</p>`)
+        } else {
+            consumo = parseInt($("#consumo").val());
+        }
+        if ($("#custoHoraWatts").val() == null || $("#custoHoraWatts").val() == "") {
+            $("#valorASerPago").empty();
+            $("#valorASerPago").append(`<p>Valor cobrado pela companhia elétrica é necessário para fazer o calculo!</p>`)
+        } else {
+            custoHoraWatts = parseFloat($("#custoHoraWatts").val().replace(",", "."));
+        }
+        if (diasLigado > 1) {
+            dias = "dias"
+        }
+        var todosOsCamposPreenchidos = (($("#valorASerPago").length > 0) && ($("#horaLigado").val() != null && $("#horaLigado").val() != "") && ($("#diasLigado").val() != null && $("#diasLigado").val() != "") && ($("#consumo").val() != null && $("#consumo").val() != "") && ($("#custoHoraWatts").val() != null && $("#custoHoraWatts").val() != ""));
+        if (todosOsCamposPreenchidos) {
+            $("#valorASerPago").empty();
+            horasNoMesLigado = (horasLigado * diasLigado);
+            conversaoConsumo = (consumo / 1000);
+            valorAPagar = ((horasNoMesLigado * conversaoConsumo) * custoHoraWatts);
+            $("#valorASerPago").append(`<p>O consumo do eletrodoméstico por ${horasLigado}h ligado por ${diasLigado} ${dias}, pelo custo de R$ ${custoHoraWatts.toString().replace(".", ",")} pela companhia elétrica é R$ ${valorAPagar.toFixed(2)}</p>`)
+        }
+    }
+
+</script>
+
+</html>
